@@ -36,8 +36,7 @@ function FavouriteButton({movie}) {
     }
 
   return (
-   <button onClick={(e) => {e.stopPropagation()
-    toggleFavourite()}}>{isFavourite ? '❤️' : '🤍'}</button>
+   <button onClick={(e) => {toggleFavourite}>{isFavourite ? '❤️' : '🤍'}</button>
   )
 }
 
