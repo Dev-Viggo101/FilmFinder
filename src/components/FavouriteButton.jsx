@@ -10,7 +10,7 @@ function FavouriteButton({movie}) {
     }, [movie.id])
 
     const toggleFavourite = (e) => {
-        e.stopPropagation()
+        if(e) e.stopPropagation()
         let favourites = JSON.parse(localStorage.getItem('favourites') || '[]')
 
         if(isFavourite){
@@ -31,8 +31,6 @@ function FavouriteButton({movie}) {
 
         localStorage.setItem('favourites', JSON.stringify(favourites))
         setIsFavourite(!isFavourite)
-
-        window.dispatchEvent(new Event('storage'))
     }
 
   return (
